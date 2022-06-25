@@ -16,11 +16,16 @@ The backend is built on NODE js and the database is MongoDB
 1. Home page with much of the stuff
  1. Contact us , with whatsapp
  2. An AI chatbot which is able to hold its own
+ 3. Skills, technologies
 2. Students
   1. Their Projects
   2. Goals
 3.Blog
-  1. Articles
+  1. Articles on web dev /on learning and my journey towards learning
+
+4.Hobbies
+
+
 
 
 
