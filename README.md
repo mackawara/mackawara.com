@@ -9,6 +9,21 @@ The backend is built on NODE js and the database is MongoDB
 3. SHowcase all ongoing projects
 4. Blog page, A collection of articles
 5. Current Reasearch
-6. 
+6. Hobbies page
+
+
+#Pages
+1. Home page with much of the stuff
+ 1. Contact us , with whatsapp
+ 2. An AI chatbot which is able to hold its own
+2. Students
+  1. Their Projects
+  2. Goals
+3.Blog
+  1. Articles
+
+
+
+
 
 
