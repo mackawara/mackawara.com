@@ -1,5 +1,5 @@
 # mackawara.com
-This is the official mackawara.com site  built on html,css and vanill JS
+This is the official mackawara.com site  built on html,css and vanill aJS
 # Tech Stack
 As mentioned abpve the UI is built on vanilla HTML. CSS and JS
 The backend is built on NODE js and the database is MongoDB
@@ -24,7 +24,8 @@ The backend is built on NODE js and the database is MongoDB
   1. Articles on web dev /on learning and my journey towards learning
 
 4.Hobbies
-
+FEatures Outstanding
+AI Chabot
 
 
 
