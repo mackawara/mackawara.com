@@ -1362,7 +1362,6 @@ header.major {
 header.major:after {
   content: "";
   display: block;
-  border-top: solid 1px #dbdbdb;
   height: 8px;
 }
 
@@ -1931,6 +1930,7 @@ ol.default li {
   margin: 0 auto;
   overflow: hidden;
   padding: 9em 0 6em 0;
+  border: 5px solid red;
 }
 
 #banner h2 {
@@ -1998,7 +1998,6 @@ ol.default li {
   background-position: top left, center center;
   background-size: auto, cover;
   padding: 3em 0;
-  
 }
 
 #main-wrapper {
