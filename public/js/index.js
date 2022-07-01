@@ -1,3 +1,6 @@
 window.addEventListener("DOMContentLoaded", async () => {
-  console.log("doc loaded");
+  document.getElementById("chatbot").addEventListener("click", () => {
+    const chatbotForm = document.getElementById("chatbotForm");
+    chatbotForm.style.display = "flex";
+  });
 });
