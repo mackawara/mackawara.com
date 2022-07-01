@@ -5,13 +5,14 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" /> 
+	<link rel="stylesheet" href="./css/style.css" /> 
 </head>
 
 <body class="homepage is-preload">
 	<div id="page-wrapper">
 
 		<!-- Header -->
-		<div id="header-wrapper">
+		<div id="header-wrapper" class="header-wrapper">
 			<div class="container">
 
 				<!-- Header -->
@@ -52,14 +53,14 @@
 				</header>
 
 				<!-- Banner -->
-				<div id="banner">
+				<div id="banner" class="banner">
 					<h2>
 						<br />
 						Mac Kawara, a full stack engineer, with a proven track record of building fast, secure, full
 						stack web applications
 					</h2>
 					<p>Click below to chat with interactive MacBot to learn more about me</p>
-					<a href="#" class="button large icon solid fa-check-circle">Click here to chat</a>
+					<button id="chatbot" class="button large icon solid fa-check-circle">Click here to chat</button>
 				</div>
 
 			</div>
@@ -181,7 +182,7 @@ Having deployed all previous apps on Heroku , I am looking into  hosting my app 
 
 									<!-- Excerpt -->
 									<article class="box excerpt">
-										<a href="#" class="image left"><img src="images/pic04.jpg" alt="" /></a>
+										<a href="#" class="image project-image left"><img src="images/pic04.jpg" alt="" /></a>
 										<div>
 											<header>
 												<span class="date">May 2022</span>
@@ -206,7 +207,7 @@ Having deployed all previous apps on Heroku , I am looking into  hosting my app 
 
 									<!-- Excerpt -->
 									<article class="box excerpt">
-										<a href="#" class="image left"><img src="images/pic05.jpg" alt="" /></a>
+										<a href="#" class="image left project-image"><img src="images/pic05.jpg" alt="" /></a>
 										<div>
 											<header>
 												<span class="date">September 2021</span>
@@ -228,7 +229,7 @@ Having deployed all previous apps on Heroku , I am looking into  hosting my app 
 
 									<!-- Excerpt -->
 									<article class="box excerpt">
-										<a href="#" class="image left"><img src="images/pic06.jpg" alt="" /></a>
+										<a href="#" class="image project-image left"><img src="images/whatsappJS-on_green-bg.jpeg" style="width: 100%;height:100%" alt="" /></a>
 										<div>
 											<header>
 												<h2>Other Projects</h2>
@@ -258,7 +259,7 @@ Having deployed all previous apps on Heroku , I am looking into  hosting my app 
 								<section class="box spotlight">
 									<h2 class="icon fa-file-alt">Tech Stack</h2>
 									<article>
-										<a href="#" class="image featured"><img src="images/building-Apis.jpeg" alt=""></a>
+										<a href="#" class="image project-image featured"><img src="images/building-Apis.jpeg" alt=""></a>
 										<header>
 											<h3><a href="#">Programming languages and Frameworks</a></h3>
 											<p></p>
@@ -286,6 +287,17 @@ Having deployed all previous apps on Heroku , I am looking into  hosting my app 
 			</div>
 		</div>
 
+		<div class="chat-popup" id="chatbotForm">
+			<form class="form-container">
+			  <h1>Chat</h1>
+		  
+			  <label for="msg"><b>Message</b></label>
+			  <textarea placeholder="Type message.." name="msg" required></textarea>
+		  
+			  <button type="submit" class="btn">Send</button>
+			  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+			</form>
+		  </div>
 		<!-- Footer Wrapper -->
 		<div id="footer-wrapper">
 			<div id="footer" class="container">
@@ -362,7 +374,7 @@ Having deployed all previous apps on Heroku , I am looking into  hosting my app 
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script src="assets/js/index.js"></script>
+	<script src="js/index.js"></script>
 
 </body>
 
