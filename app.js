@@ -9,15 +9,16 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log("server listening on port "+ PORT);
+  console.log("server listening on port " + PORT);
 });
 app.get("/", (req, res, next) => {
   res.sendFile(__dirname + "/public/index.html");
 });
-app.post("/chatmessage",(req,res,next)=>{
-  console.log(req.body)
-  res.status(200).send(JSON.stringify({response:"message well received"}))
-})
 app.use(express.static("public"));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.post("/chatmessage", (req, res, next) => {
+  console.log(req.body);
+  res.status(200).send({ response: "thank you for your message ." });
+});
