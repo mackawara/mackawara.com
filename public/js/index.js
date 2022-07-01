@@ -8,9 +8,33 @@ window.addEventListener("DOMContentLoaded", async () => {
   });
 
   const chatForm = document.getElementById("chatForm");
-  chatForm.addEventListener("submit", (e) => {
+  chatForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const message = chatForm.querySelector("textarea").value;
-    console.log(message);
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+      redirect: "follow",
+      body: JSON.stringify({ getmessage: message }),
+    };
+    const responseMsg = await (await fetch("/chatmessage", options)).json();
+    const response = document.getElementById("response");
+    response.innerText = responseMsg.response;
+    console.log(responseMsg.response);
   });
+  const options2 = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    mode: "cors",
+    redirect: "follow",
+    body: JSON.stringify({ getTes: "TEST GET METHOD" }),
+  }; /* 
+  fetch("/chatmessage",options2).then((response) => {
+    console.log(response);
+  }); */
 });
