@@ -8,6 +8,9 @@ const { dirname } = require("path");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+//validation
+const { validationRules, validate } = require("./middleware/validation");
+
 app.listen(PORT, () => {
   console.log("server listening on port " + PORT);
 });
@@ -18,7 +21,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post("/chatmessage", (req, res, next) => {
+app.post("/chatmessage", validationRules(), validate, (req, res, next) => {
   console.log(req.body);
   res.status(200).send({ response: "thank you for your message ." });
 });
