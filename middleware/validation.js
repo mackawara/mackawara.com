@@ -1,6 +1,13 @@
 const { body, validationResult } = require("express-validator");
-const validationRules = () =>
-  body("message").isString().not().isEmpty().trim().toString();
+const validationRules = () => {
+  return [
+    body("message", "Please enter a valid message")
+      .isString()
+      .not()
+      .isEmpty()
+      .trim(),
+  ];
+};
 
 const validate = (req, res, next) => {
   console.log(req.body);
