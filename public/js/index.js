@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       },
       mode: "cors",
       redirect: "follow",
-      body: JSON.stringify({ getmessage: message }),
+      body: JSON.stringify({ message: message }),
     };
     const responseMsg = await (await fetch("/chatmessage", options)).json();
     const response = document.getElementById("response");
