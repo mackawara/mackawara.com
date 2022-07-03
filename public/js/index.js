@@ -25,16 +25,5 @@ window.addEventListener("DOMContentLoaded", async () => {
     response.innerText = responseMsg.response;
     console.log(responseMsg.response);
   });
-  const options2 = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    mode: "cors",
-    redirect: "follow",
-    body: JSON.stringify({ getTes: "TEST GET METHOD" }),
-  }; /* 
-  fetch("/chatmessage",options2).then((response) => {
-    console.log(response);
-  }); */
+  
 });
