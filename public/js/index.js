@@ -20,16 +20,18 @@ window.addEventListener("DOMContentLoaded", async () => {
       redirect: "follow",
       body: JSON.stringify({ message: message }),
     };
-    /* const responseMsg = await (await fetch("/chatmessage", options)).json();
+    const responseMsg = await fetch("/chatmessage", options).then((res) =>
+      res.json()
+    );
     const response = document.getElementById("response");
     response.innerText = responseMsg.response;
-    console.log(responseMsg.response); */
+    console.log(responseMsg.response);
 
-    const encodedChat = encodeURIComponent(message);
+    /*  const encodedChat = encodeURIComponent(message);
     const uri = "https://api.wit.ai/message?v=20220622&q=" + encodedChat;
     const auth = "Bearer " + CLIENT_TOKEN;
     const chat = fetch(uri, { headers: { Authorization: auth } })
       .then((res) => res.json())
-      .then((res) => console.log(res.));
+      .then((res) => console.log(res.));*/
   });
 });
