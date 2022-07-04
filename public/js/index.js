@@ -20,10 +20,10 @@ window.addEventListener("DOMContentLoaded", async () => {
       redirect: "follow",
       body: JSON.stringify({ message: message }),
     };
-    const responseMsg = await (await fetch("/chatmessage", options)).json();
+    const responseMsg = await fetch("/chatmessage", options);
     const response = document.getElementById("response");
-    response.innerText = responseMsg.response;
-    console.log(responseMsg.response);
+    // response.innerText = responseMsg.response;
+    console.log(responseMsg.json());
   });
   const options2 = {
     method: "GET",
