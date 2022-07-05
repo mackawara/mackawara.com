@@ -114,3 +114,9 @@
 .open-button:hover {
   opacity: 1;
 }
+#footer-wrapper {
+  padding: 2rem 0;
+}
+#copyright {
+  padding: 0;
+}
