@@ -13,6 +13,42 @@
 .banner h3 {
   color: inherit;
 }
+.banner #interactive {
+  font-size: 1.1rem;
+  margin: 1.25rem 0 0;
+}
+.paralax {
+  display: flex;
+  height: 100vh;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  background-size: cover;
+  background-image: url("./images/water-drop-main-bg.jpeg");
+  background-blend-mode: multiply;
+  background-color: #464a52;
+  background-position: center;
+  background-attachment: fixed;
+}
+.paralax h2,
+.paralax a {
+  display: flex;
+  margin: 1.1rem;
+  align-self: center;
+  text-decoration: none;
+  color: #f1f1f1;
+}
+
+.tech-stack-icons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+.tech-stack-icons-wrapper h4 {
+  display: flex;
+  justify-content: space-between;
+}
 
 /* The popup chat - hidden by default */
 .chat-popup {
