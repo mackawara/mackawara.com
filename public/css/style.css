@@ -38,16 +38,24 @@
   text-decoration: none;
   color: #f1f1f1;
 }
-
+/* icons showing tech stack */
 .tech-stack-icons-wrapper {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
-.tech-stack-icons-wrapper h4 {
+.icon-wrapper h2 {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  width: 100%;
+  margin: 0.6rem 0;
+}
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 /* The popup chat - hidden by default */
