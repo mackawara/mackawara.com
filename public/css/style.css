@@ -20,10 +20,7 @@
   display: block;
   width: 100%;
 }
-.second {
-  left: 0;
-  white-space: unset;
-}
+
 .interests * {
   box-sizing: border-box;
 }
@@ -146,4 +143,8 @@
 }
 #copyright {
   padding: 0;
+}
+@media screen and (max-width: 980px) {
+  .interests {
+  }
 }
