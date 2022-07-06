@@ -23,10 +23,13 @@
 
 .interests * {
   box-sizing: border-box;
+  width: 100%;
 }
-.interests header p {
-  text-overflow: clip;
-  white-space: wrap;
+.interests p {
+  text-align: center;
+  width: 100%;
+  line-height: 1.15em;
+  letter-spacing: 0.91;
 }
 .interests header {
   display: flex;
@@ -145,6 +148,16 @@
   padding: 0;
 }
 @media screen and (max-width: 980px) {
-  .interests {
+  .interests p {
+    display: block;
+    border-bottom: solid 1px #dbdbdb;
+    padding-bottom: 8px;
+  }
+  .interests p::after {
+    padding: 0 0 1.5rem;
+    content: "";
+    display: block;
+    border-bottom: solid 1px #dbdbdb;
+    height: 8px;
   }
 }
