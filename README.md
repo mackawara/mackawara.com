@@ -1,7 +1,5 @@
 # mackawara.com
 This is the official mackawara.com site.
-# Tech Stack
-As mentioned above the UI is built on vanilla HTML, CSS and JS
 
 # Features
 1. Whatsapp button, Users can send direct whatssapp messages from the site
