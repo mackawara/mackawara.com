@@ -1,8 +1,8 @@
 # mackawara.com
-This is the official mackawara.com site  built on html,css and vanilla JS
+This is the official mackawara.com site.
 # Tech Stack
 As mentioned above the UI is built on vanilla HTML, CSS and JS
-The backend is built on NODE js and the database is MongoDB
+
 # Features
 1. Whatsapp button, Users can send direct whatssapp messages from the site
 2. Displays my wide range of skills such as validation, design etc
