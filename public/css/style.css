@@ -2,12 +2,39 @@
   width: 40%;
   height: 75%;
 }
+
 .header-wrapper {
   background-image: url(images/water-drop-main-bg.jpeg);
   background-size: cover;
   background-position: center;
   background-color: #363a42;
   background-blend-mode: multiply;
+}
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.interests h3 {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+.second {
+  left: 0;
+  white-space: unset;
+}
+.interests * {
+  box-sizing: border-box;
+}
+.interests header p {
+  text-overflow: clip;
+  white-space: wrap;
+}
+.interests header {
+  display: flex;
+  flex-wrap: wrap;
+  left: 0;
 }
 
 .banner h3 {
