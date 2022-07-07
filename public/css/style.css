@@ -2,12 +2,87 @@
   width: 40%;
   height: 75%;
 }
+
 .header-wrapper {
   background-image: url(images/water-drop-main-bg.jpeg);
   background-size: cover;
   background-position: center;
   background-color: #363a42;
   background-blend-mode: multiply;
+}
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.interests h3 {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.interests * {
+  box-sizing: border-box;
+  width: 100%;
+}
+.interests p {
+  text-align: center;
+  width: 100%;
+  line-height: 1.15em;
+  letter-spacing: 0.91;
+}
+.interests header {
+  display: flex;
+  flex-wrap: wrap;
+  left: 0;
+}
+
+.banner h3 {
+  color: inherit;
+}
+.banner #interactive {
+  font-size: 1.1rem;
+  margin: 1.25rem 0 0;
+}
+.paralax {
+  display: flex;
+  height: 100vh;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  background-size: cover;
+  background-image: url("./images/water-drop-main-bg.jpeg");
+  background-blend-mode: multiply;
+  background-color: #464a52;
+  background-position: center;
+  background-attachment: fixed;
+}
+.paralax h3,
+.paralax a {
+  display: flex;
+  margin: 1.1rem;
+  align-self: center;
+  text-decoration: none;
+  color: #f1f1f1;
+}
+/* icons showing tech stack */
+.tech-stack-icons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: start;
+}
+.icon-wrapper h2 {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  margin: 0.6rem 0;
+}
+.icon-wrapper {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 /* The popup chat - hidden by default */
@@ -56,7 +131,7 @@
   opacity: 0.8;
 }
 
-/* Add a red background color to the cancel button */
+/* Add a DIFFERENT background color to the cancel button */
 .form-container .cancel {
   background-color: #464a52;
 }
@@ -65,4 +140,24 @@
 .form-container .btn:hover,
 .open-button:hover {
   opacity: 1;
+}
+#footer-wrapper {
+  padding: 2rem 0;
+}
+#copyright {
+  padding: 0;
+}
+@media screen and (max-width: 980px) {
+  .interests p {
+    display: block;
+    border-bottom: solid 1px #dbdbdb;
+    padding-bottom: 8px;
+  }
+  .interests p::after {
+    padding: 0 0 1.5rem;
+    content: "";
+    display: block;
+    border-bottom: solid 1px #dbdbdb;
+    height: 8px;
+  }
 }
