@@ -22,8 +22,8 @@ This is the official mackawara.com site.
   1. Articles on web dev /on learning and my journey towards learning
 
 4.Hobbies
-FEatures Outstanding
-AI Chabot
+FEatures 
+AI Chabot with ability to provide information and chat nicely
 
 
 
