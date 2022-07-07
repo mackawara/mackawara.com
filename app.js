@@ -3,8 +3,8 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 //const multer = require("multer");
 const { dirname } = require("path");
-const axios=require("axios").default
-
+const axios = require("axios").default;
+require("dotenv").config();
 
 // server config
 const app = express();
@@ -24,35 +24,40 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //wit ai
-const serverToken=process.env.WITSERVERACCESSTOKEN
+const serverToken = process.env.WITSERVERACCESSTOKEN;
 
+app.post(
+  "/chatmessage",
+  validationRules(),
+  validate,
+  async (req, res, next) => {
+    console.log(req.body);
 
-app.post("/chatmessage", validationRules(), validate, async (req, res, next) => {
-  console.log(req.body);
-  
-  const encodedChat = encodeURIComponent(req.body.message);
-  const uri = "https://api.wit.ai/message?v=20220622&q=" + encodedChat;
-  const auth = "Bearer " + serverToken;
-  const chat = await fetch(uri, { headers: { Authorization: auth } })
+    const encodedChat = encodeURIComponent(req.body.message);
+    const uri = "https://api.wit.ai/message?v=20220707&q=" + encodedChat;
+    const auth = "Bearer " + serverToken;
+
+    /* const chat = await fetch(uri, { headers: { Authorization: auth } })
   console.log(chat.json())
+ */
 
-
-  const send = async () => {
-    axios({
-      method: "POST", // Required, HTTP method, a string, e.g. POST, GET
-      url:uri,
-      data:encodedChat,
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((data) => {
-        console.log("message sent successfuly");
-        console.log(data.headers);
+    const send = async () => {
+      axios(uri, {
+        method: "GET", // Required, HTTP method, a string, e.g. POST, GET
+        headers: { Authorization: auth },
       })
-      .catch((err) => {
-        console.log(err.response);
-      });
-  };
-  
-  res.status(200).send(chat);
+        .then((data) => {
+          console.log("message sent successfuly");
+          console.log(data.data);
+        })
+        .catch((err) => {
+          console.log("there was an error");
+          console.log(err);
+          res.send(err);
+        });
+    };
+    send();
 
-});
+    //res.status(200).send(chat);
+  }
+);
