@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 //validation
 const { validationRules, validate } = require("./middleware/validation");
+const { identity } = require("./assets/mackawara");
 
 app.listen(PORT, () => {
   console.log("server listening on port " + PORT);
@@ -40,7 +41,10 @@ app.post(
     /* const chat = await fetch(uri, { headers: { Authorization: auth } })
   console.log(chat.json())
  */
+    const chatBot = require("./middleware/chatBot"),
+    testIntents=["jobs","identity"]
 
+    //chatBot(testIntents)
     const send = async () => {
       axios(uri, {
         method: "GET", // Required, HTTP method, a string, e.g. POST, GET
@@ -48,12 +52,19 @@ app.post(
       })
         .then((data) => {
           console.log("message sent successfuly");
-          console.log(data.data);
+         // console.log(toString(data.data.intents.map((element)=>element.name)));
+          const intents = data.data.intents;
+          console.log(intents)
+          res.send(data.data)
+        //  const intent=intents.forEach((element)=> {return element.name});
+          const entities = data.data.entities
+          const traits = data.data.traits;
+          chatBot(intents);
         })
         .catch((err) => {
           console.log("there was an error");
           console.log(err);
-          res.send(err);
+          res.send({message: "There was an error on the server , please  try again"});
         });
     };
     send();
