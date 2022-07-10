@@ -28,37 +28,37 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const serverToken = process.env.WITSERVERACCESSTOKEN;
 
 const chatBot = require("./middleware/chatBot"),
-testIntents=["jobs","identity"],
-testEntities= {
-  ability :[
+  testIntents = ["jobs", "identity"],
+  testEntities = {
+    ability: [
       {
-          "id": "1111046773150240",
-          "name": "ability",
-          "role": "ability",
-          "start": 49,
-          "end": 61,
-          "body": "are you good",
-          "confidence": 1,
-          "entities": {},
-          "value": "Are you good",
-          "type": "value"
-      }
-  ],
-  techinical_skill: [
+        id: "1111046773150240",
+        name: "ability",
+        role: "ability",
+        start: 49,
+        end: 61,
+        body: "are you good",
+        confidence: 1,
+        entities: {},
+        value: "Are you good",
+        type: "value",
+      },
+    ],
+    techinical_skill: [
       {
-          "id": "616654010080680",
-          "name": "techinical_skill",
-          "role": "library",
-          "start": 39,
-          "end": 48,
-          "body": "languages",
-          "confidence": 1,
-          "entities": {},
-          "value": "languages",
-          "type": "value"
-      }
-  ]
-}
+        id: "616654010080680",
+        name: "techinical_skill",
+        role: "library",
+        start: 39,
+        end: 48,
+        body: "languages",
+        confidence: 1,
+        entities: {},
+        value: "languages",
+        type: "value",
+      },
+    ],
+  };
 
 //chatBot(testIntents,testEntities)
 app.post(
@@ -66,36 +66,33 @@ app.post(
   validationRules(),
   validate,
   async (req, res, next) => {
-    console.log(req.body);
 
     const encodedChat = encodeURIComponent(req.body.message);
     const uri = "https://api.wit.ai/message?v=20220707&q=" + encodedChat;
     const auth = "Bearer " + serverToken;
 
-    /* const chat = await fetch(uri, { headers: { Authorization: auth } })
-  console.log(chat.json())
- */
-   
     const send = async () => {
       axios(uri, {
         method: "GET", // Required, HTTP method, a string, e.g. POST, GET
         headers: { Authorization: auth },
       })
-        .then((data) => {
+        .then((witResp) => {
           console.log("message sent successfuly");
-         // console.log(toString(data.data.intents.map((element)=>element.name)));
-          const intents = data.data.intents;
-          console.log(intents)
-          res.send(data.data)
-        //  const intent=intents.forEach((element)=> {return element.name});
-          const entities = data.data.entities
-          const traits = data.data.traits;
-          chatBot(intents,entities);
+          // console.log(toString(data.data.intents.map((element)=>element.name)));
+          const intents = witResp.data.intents;
+          console.log(intents);
+          res.send(witResp.data);
+          //  const intent=intents.forEach((element)=> {return element.name});
+          const entities = witResp.data.entities;
+          const traits = witResp.data.traits;
+          chatBot(intents, entities);
         })
         .catch((err) => {
           console.log("there was an error");
           console.log(err);
-          res.send({message: "There was an error on the server , please  try again"});
+          res.send({
+            message: "There was an error on the server , please  try again",
+          });
         });
     };
     send();
