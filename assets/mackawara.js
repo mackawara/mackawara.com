@@ -1,5 +1,6 @@
 const macKawara = {
   identity: { name: "Macdonald Kawara", location: "Zimbabwe" },
+  technical_skill:{
   languages: ["Javascript", "HTML", "CSS"],
   frameworks: ["ReactJS", "NodeJs", "express"],
   databases: "mongoDB",
@@ -7,7 +8,7 @@ const macKawara = {
     server: "Express",
     desing: ["Material UI", "Bootstrap"],
     security: ["passport", "bcrypt"],
-  },
+  }},
   jobOpportunities: [
     "remote",
     "on site",
@@ -36,7 +37,7 @@ const macKawara = {
     "Web Security",
     "finance",
   ],
-  strengths: ["Problem solving ", "analytical thinking", "adept at learning"],
+  ability: ["Problem solving ", "analytical thinking", "adept at learning"],
   services: [
     "Frontend design",
     "Building and raining chatbots in conversation using AI ",
