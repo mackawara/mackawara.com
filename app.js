@@ -27,6 +27,40 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //wit ai
 const serverToken = process.env.WITSERVERACCESSTOKEN;
 
+const chatBot = require("./middleware/chatBot"),
+testIntents=["jobs","identity"],
+testEntities= {
+  ability :[
+      {
+          "id": "1111046773150240",
+          "name": "ability",
+          "role": "ability",
+          "start": 49,
+          "end": 61,
+          "body": "are you good",
+          "confidence": 1,
+          "entities": {},
+          "value": "Are you good",
+          "type": "value"
+      }
+  ],
+  techinical_skill: [
+      {
+          "id": "616654010080680",
+          "name": "techinical_skill",
+          "role": "library",
+          "start": 39,
+          "end": 48,
+          "body": "languages",
+          "confidence": 1,
+          "entities": {},
+          "value": "languages",
+          "type": "value"
+      }
+  ]
+}
+
+//chatBot(testIntents,testEntities)
 app.post(
   "/chatmessage",
   validationRules(),
@@ -41,10 +75,7 @@ app.post(
     /* const chat = await fetch(uri, { headers: { Authorization: auth } })
   console.log(chat.json())
  */
-    const chatBot = require("./middleware/chatBot"),
-    testIntents=["jobs","identity"]
-
-    //chatBot(testIntents)
+   
     const send = async () => {
       axios(uri, {
         method: "GET", // Required, HTTP method, a string, e.g. POST, GET
@@ -59,7 +90,7 @@ app.post(
         //  const intent=intents.forEach((element)=> {return element.name});
           const entities = data.data.entities
           const traits = data.data.traits;
-          chatBot(intents);
+          chatBot(intents,entities);
         })
         .catch((err) => {
           console.log("there was an error");
