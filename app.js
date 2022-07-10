@@ -79,11 +79,12 @@ app.post(
           console.log("message sent successfuly");
           // console.log(toString(data.data.intents.map((element)=>element.name)));
           const intents = witResp.data.intents; // extract intents array
-          res.send(witResp.data);
+        //  res.send(witResp.data);
           //  const intent=intents.forEach((element)=> {return element.name});
           const entities = witResp.data.entities; // extract entities object
           const traits = witResp.data.traits;
-          chatBot(intents, entities);
+        const message= chatBot(intents, entities)
+        console.log(message)
         })
         .catch((err) => {
           console.log("there was an error");
