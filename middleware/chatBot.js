@@ -1,5 +1,6 @@
 //const intentsArray = require("../chatbotAssetsassets");
 const macKawara = require("../assets/mackawara");
+//const greeting = require("./");
 const chatBot = (intents, entities, confidence) => {
   const entity = {};
   let entityArray = [];
@@ -19,10 +20,12 @@ const chatBot = (intents, entities, confidence) => {
     intent = intentElement.name;
   });
   async function sendRes(intent, entity) {
-    console.log(intent);
-    console.log(entity.entityName, entity.entityRole, entity.entityValue);
+    console.log("hi how are you");
+    if (intent === "greeting") {
+      return "Hi , I am good thanks, how can I help you";
+    }
   }
-  sendRes(intent, entity);
+  return sendRes(intent, entity);
   // console.log(reqProps);
 };
 module.exports = chatBot;
