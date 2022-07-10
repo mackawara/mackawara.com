@@ -66,7 +66,6 @@ app.post(
   validationRules(),
   validate,
   async (req, res, next) => {
-
     const encodedChat = encodeURIComponent(req.body.message);
     const uri = "https://api.wit.ai/message?v=20220707&q=" + encodedChat;
     const auth = "Bearer " + serverToken;
@@ -79,11 +78,10 @@ app.post(
         .then((witResp) => {
           console.log("message sent successfuly");
           // console.log(toString(data.data.intents.map((element)=>element.name)));
-          const intents = witResp.data.intents;
-          console.log(intents);
+          const intents = witResp.data.intents; // extract intents array
           res.send(witResp.data);
           //  const intent=intents.forEach((element)=> {return element.name});
-          const entities = witResp.data.entities;
+          const entities = witResp.data.entities; // extract entities object
           const traits = witResp.data.traits;
           chatBot(intents, entities);
         })
