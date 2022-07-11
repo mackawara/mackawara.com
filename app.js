@@ -75,16 +75,16 @@ app.post(
         method: "GET", // Required, HTTP method, a string, e.g. POST, GET
         headers: { Authorization: auth },
       })
-        .then(async(witResp) => {
+        .then(async (witResp) => {
           console.log("message sent successfuly");
           // console.log(toString(data.data.intents.map((element)=>element.name)));
           const intents = witResp.data.intents; // extract intents array
-        //  res.send(witResp.data);
+          console.log(intents);
           //  const intent=intents.forEach((element)=> {return element.name});
           const entities = witResp.data.entities; // extract entities object
           const traits = witResp.data.traits;
-        const message= await chatBot(intents, entities)
-        res.send({message:message})
+          const message = await chatBot(intents, entities);
+          res.send({ message: message });
         })
         .catch((err) => {
           console.log("there was an error");
