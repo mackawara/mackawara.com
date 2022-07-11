@@ -43,7 +43,10 @@ const chatBot = (intents, entities, confidence) => {
       return `Hi, I am ${macKawara.identity.name} from ${macKawara.identity.location} .${hChU}`;
     } else if (intent === "strengths") {
       return `My strengths are ${macKawara.ability}`;
-    } else if (intent === "job_opportunities") `${macKawara.jobOpportunities}`;
+    } else if (intent === "job_opportunities") {
+      return `${macKawara.jobOpportunities}`;
+    } else
+      return `Sorry I am not yet trained to answer that, please contact my human directly or ask another question`;
     // console.log(reqProps);
   }
   return sendRes(intent, entity);
