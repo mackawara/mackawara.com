@@ -5,8 +5,8 @@ const validationRules = () => {
       .isString()
       .not()
       .isEmpty()
-      .trim().escape(),
-
+      .trim()
+      .escape(),
   ];
 };
 
