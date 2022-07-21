@@ -29,7 +29,7 @@ const macKawara = {
   projects: {
     inProgress: ["inbert Delivery", "zim driving test", "Scorchers cricket"],
     completed: ["whatsapp JS", "zimra duty calculator"],
-    games: "rock paper scissors",
+    games: ["rock paper scissors", "guess the word", "fizz-buzz"],
   },
 
   interests: [
