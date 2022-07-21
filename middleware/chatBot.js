@@ -5,6 +5,7 @@ const chatBot = (intents, entities, confidence) => {
   const entity = {};
   let entityArray = [];
   let entityName, entityRole, entityValue, intent;
+
   for (const any of Object.keys(entities)) {
     //extract the name role and value from entity object
     // reqProps.entity = {};
@@ -32,7 +33,7 @@ const chatBot = (intents, entities, confidence) => {
     } else if (intent === "pricing") {
       return "Thank you, for your enquiry, We can get back to you with a quote once the scope of work is fully established . Please leave your details so that my human can get back to you";
     } else if (intent === "projects") {
-      if (value === "current projects")
+      if (value === "projects")
         return `I am currently working on these projects ${macKawara.projects.inProgress} `;
       else if (value == "completed projects") {
         `Checkout these completed  projects from my repo ${macKawara.projects.completed} `;
@@ -48,7 +49,7 @@ const chatBot = (intents, entities, confidence) => {
     } else if (intent === "programming_language") {
       return ` I am proficient in the languages ${macKawara.technical_skill.languages}`;
     } else if (intent === "technical_skills") {
-      return ` Apart from ${macKawara.technical_skill.languages}, I am also advanced at ${macKawara.technical_skill.frameworks} and ${macKawara.technical_skill.keyLibraries}`;
+      return ` Apart from ${macKawara.technical_skill.languages}, I am also advanced at ${macKawara.technical_skill.frameworks} and these key data processing libraries${macKawara.technical_skill.keyLibraries.dataProcessing}`;
     } else
       return `Sorry I am not yet trained to answer that, please contact my human directly or ask another question`;
     // console.log(reqProps);
