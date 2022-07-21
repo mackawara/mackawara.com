@@ -44,7 +44,11 @@ const chatBot = (intents, entities, confidence) => {
     } else if (intent === "strengths") {
       return `My strengths are ${macKawara.ability}`;
     } else if (intent === "job_opportunities") {
-      return `${macKawara.jobOpportunities}`;
+      return ` I am open for any of these ${macKawara.jobOpportunities}`;
+    } else if (intent === "programming_language") {
+      return ` I am proficient in the languages ${macKawara.technical_skill.languages}`;
+    } else if (intent === "technical_skills") {
+      return ` Apart from ${macKawara.technical_skill.languages}, I am also advanced at ${macKawara.technical_skill.frameworks} and ${macKawara.technical_skill.keyLibraries}`;
     } else
       return `Sorry I am not yet trained to answer that, please contact my human directly or ask another question`;
     // console.log(reqProps);
