@@ -1,14 +1,15 @@
 const macKawara = {
   identity: { name: "Macdonald Kawara", location: "Zimbabwe" },
-  technical_skill:{
-  languages: ["Javascript", "HTML", "CSS"],
-  frameworks: ["ReactJS", "NodeJs", "express"],
-  databases: "mongoDB",
-  keyLibraries: {
-    server: "Express",
-    desing: ["Material UI", "Bootstrap"],
-    security: ["passport", "bcrypt"],
-  }},
+  technical_skill: {
+    languages: ["Javascript", "HTML", "CSS", "python"],
+    frameworks: ["ReactJS", "NodeJs", "express"],
+    databases: "mongoDB",
+    keyLibraries: {
+      server: "Express",
+      desing: ["Material UI", "Bootstrap"],
+      security: ["passport", "bcrypt"],
+    },
+  },
   jobOpportunities: [
     "remote",
     "on site",
