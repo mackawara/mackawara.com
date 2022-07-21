@@ -6,7 +6,8 @@ const macKawara = {
     databases: "mongoDB",
     keyLibraries: {
       server: "Express",
-      desing: ["Material UI", "Bootstrap"],
+      dataProcessing: ["pandas", "tensor flow (still learning)"],
+      design: ["Material UI", "Bootstrap"],
       security: ["passport", "bcrypt"],
     },
   },
