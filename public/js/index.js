@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   chatForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const message = chatForm.querySelector("textarea").value;
+    
     console.log(message);
     const options = {
       method: "POST",
