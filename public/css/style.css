@@ -87,7 +87,7 @@
 
 /* The popup chat - hidden by default */
 .chat-popup {
-  display: none;
+  display: block;
   position: fixed;
   bottom: 0;
   right: 15px;
@@ -97,7 +97,7 @@
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 300px;
+  max-width: 400px;
   padding: 10px;
   background-color: white;
 }
@@ -141,6 +141,63 @@
 .open-button:hover {
   opacity: 1;
 }
+/* Chat container */
+.chat-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  align-items: center;
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  /* padding: 10px; */
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.chat-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.chat-container img {
+  grid-column: 1/ 2;
+  grid-row: 1/2;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.chat-container img.right {
+  grid-column: 6/ 6;
+  margin-left: 20px;
+  margin-right: 0;
+  border: 1px solid red;
+}
+.chat-container p {
+  grid-column: 1/ 5;
+  grid-row: 1/2;
+  border: 1px solid red;
+}
+.chat-container span {
+  grid-row: 2/3;
+}
+
+.time-right {
+  right: 0;
+  color: #aaa;
+}
+
+.time-left {
+  left: 0;
+  color: #999;
+}
+
 #footer-wrapper {
   padding: 2rem 0;
 }
