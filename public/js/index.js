@@ -12,9 +12,14 @@ window.addEventListener("DOMContentLoaded", async () => {
   const chatForm = document.getElementById("chatForm");
   chatForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+
     const message = chatForm.querySelector("textarea").value;
+    const wrapper = document.querySelector(".chat-wrapper");
+
+    const chatBot = document.getElementById("chatBot");
+
+  
     
-    console.log(message);
     const options = {
       method: "POST",
       headers: {
