@@ -208,12 +208,12 @@
 }
 
 .time-right {
-  grid-column: 4/5;
+  grid-column: 1/6;
   color: #aaa;
 }
 
 .time-left {
-  grid-column: 1/2;
+  grid-column: 1/6;
   color: #999;
 }
 .time-left,
