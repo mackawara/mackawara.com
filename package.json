@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/mackawara/mackawara.com#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "node-wit": "^4.3.0",
+    "uuid": "^7.0.0"
   }
 }
