@@ -12,9 +12,15 @@
 #header .inner {
   background-color: unset;
 }
-#banner p{
+#banner p {
   text-transform: unset;
-  text-decoration-style:;
+}
+/* Add something to bring attention to the chatbot */
+#chatbot {
+  transform: scaleX(1.2);
+}
+#chatbot:-ms-fullscreen {
+  transition: all;
 }
 .interests {
   display: flex;
