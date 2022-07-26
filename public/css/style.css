@@ -2,13 +2,15 @@
   width: 40%;
   height: 75%;
 }
-
-.header-wrapper {
+#header-wrapper {
   background-image: url(images/water-drop-main-bg.jpeg);
   background-size: cover;
   background-position: center;
   background-color: #363a42;
   background-blend-mode: multiply;
+}
+#header .inner {
+  background-color: unset;
 }
 .interests {
   display: flex;
