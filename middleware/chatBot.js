@@ -50,7 +50,11 @@ const chatBot = (intents, entities, confidence) => {
       return ` I am proficient in the languages ${macKawara.technical_skill.languages}`;
     } else if (intent === "technical_skills") {
       return ` Apart from ${macKawara.technical_skill.languages}, I am also advanced at ${macKawara.technical_skill.frameworks} and these key data processing libraries${macKawara.technical_skill.keyLibraries.dataProcessing}`;
-    } else
+    }
+    else if (intent === "services") {
+      return ` Apart from ${macKawara.technical_skill.languages}, I am also advanced at ${macKawara.technical_skill.frameworks} and these key data processing libraries${macKawara.technical_skill.keyLibraries.dataProcessing}`;
+    } 
+    else
       return `Sorry I am not yet trained to answer that, please contact my human directly or ask another question`;
     // console.log(reqProps);
   }
