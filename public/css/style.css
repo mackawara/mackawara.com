@@ -12,6 +12,10 @@
 #header .inner {
   background-color: unset;
 }
+#banner p{
+  text-transform: unset;
+  text-decoration-style:;
+}
 .interests {
   display: flex;
   flex-wrap: wrap;
