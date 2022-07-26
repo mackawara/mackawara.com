@@ -82,19 +82,26 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: start;
+  /*  justify-content: start; */
 }
 .icon-wrapper h2 {
   display: flex;
-  justify-content: start;
+  /*  justify-content: start; */
   width: 100%;
   margin: 0.6rem 0;
+  justify-content: center;
 }
 .icon-wrapper {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
+  transform: scale(1.2);
+  transition-duration: 0.2;
+}
+.icon-wrapper:hover {
+  transition-duration: 0.2;
+  transform: scale(1.2);
 }
 
 /* The popup chat - hidden by default */
