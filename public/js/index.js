@@ -18,8 +18,10 @@ window.addEventListener("DOMContentLoaded", async () => {
     const user = document.querySelector("#user");
     user.style.display = "grid";
     document.querySelector("#user-msg").innerText = message;
-    const time = new Date.UTC();
-    document.querySelector(".time-left").innerText = "11:02";
+    const time = new Date().toLocaleTimeString(`en-US`, { timeZone: "UTC" });
+    console.log(time);
+    const timespan = document.querySelector(".time-left");
+    timespan.innerText = time;
 
     // chatBot.innerHTML = "<h4>MAc</h4>";
 
@@ -33,10 +35,11 @@ window.addEventListener("DOMContentLoaded", async () => {
       body: JSON.stringify({ message: message }),
     };
     const responseMsg = await fetch("/chat", options).then((res) => res.json());
-    const botres = document.getElementById("response");
+    const botresp = document.getElementById("botresp");
     const chatBot = document.getElementById("chatBot");
     chatBot.style.display = "grid";
-    botres.innerText = responseMsg.response;
+    botresp.innerText = responseMsg.response;
+    document.querySelector(".time-right").innerText = time;
 
     console.log(responseMsg.response);
     /*  const CLIENT_TOKEN = "R2ZXCPRCKAE7KG6I4QKS2GYAQ4FAMAPN";
