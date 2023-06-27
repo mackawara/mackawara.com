@@ -27,39 +27,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //wit ai
 const serverToken = process.env.WITSERVERACCESSTOKEN;
 
-const chatBot = require("./middleware/chatBot"),
-  testIntents = ["jobs", "identity"],
-  testEntities = {
-    ability: [
-      {
-        id: "1111046773150240",
-        name: "ability",
-        role: "ability",
-        start: 49,
-        end: 61,
-        body: "are you good",
-        confidence: 1,
-        entities: {},
-        value: "Are you good",
-        type: "value",
-      },
-    ],
-    techinical_skill: [
-      {
-        id: "616654010080680",
-        name: "techinical_skill",
-        role: "library",
-        start: 39,
-        end: 48,
-        body: "languages",
-        confidence: 1,
-        entities: {},
-        value: "languages",
-        type: "value",
-      },
-    ],
-  };
-
 //chatBot(testIntents,testEntities)
 app.post("/chat", validationRules(), validate, async (req, res, next) => {
   const encodedChat = encodeURIComponent(req.body.message);
